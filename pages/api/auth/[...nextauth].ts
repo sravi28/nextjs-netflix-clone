@@ -2,7 +2,7 @@ import NextAuth from 'next-auth';
 import GithubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
 import Credentials from 'next-auth/providers/credentials';
- import { PrismaAdapter } from '@next-auth/prisma-adapter';
+import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import { compare } from 'bcrypt';
 import prismadb from '@/libs/prismadb';
 
@@ -15,7 +15,7 @@ export default NextAuth({
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID || '',
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
-    }), 
+    }),
     Credentials({
       id: 'credentials',
       name: 'Credentials',
@@ -26,7 +26,7 @@ export default NextAuth({
         },
         password: {
           label: 'Password',
-          type: 'password'
+          type: 'passord'
         }
       },
       async authorize(credentials) {
